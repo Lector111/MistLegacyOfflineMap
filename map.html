@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Mist Legacy Map</title>
+
+	<link rel="stylesheet" href="css/ol.css">
+	<link rel="stylesheet" href="css/map.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+	
+	<script src="scripts/ol.js"></script>
+	<script src="scripts/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+</head>
+<body id="body">
+	<div id="map"></div>
+	<div id="coords">Координаты: </div>
+	
+	<button id="filter-btn" onclick="showFilter()">Filters</button>
+	<div id="filter-dialog" title="Filters">
+	    <p>Markers Types</p>
+		<select id="filter-marker-types" multiple size="4">
+		    <option value="all">All</option>
+		    <option value="locations" selected>Locations</option>
+			<option value="resources">Resources</option>
+			<option value="regions">Regions</option>
+		    <option value="quests">Quests</option>
+		    <option value="flags">Flags</option>
+			<option value="elexirs">Elexirs</option>
+			<option value="bosses">Bosses</option>
+			<option value="somberseasons">Somberseasons</option>
+		</select>
+		<hr>
+		<p>Search</p>
+		<input id="filter-search" style="width:100%">
+		<hr>
+		<p>Hiden</p>
+		<select id="filter-hiden">
+		    <option value="all">All</option>
+		    <option value="nonHiden" selected>Non Hiden</option>
+			<option value="hiden">Hiden</option>
+		</select>
+		<hr>
+		<div>
+			<p>Skill</p>
+			<label style="float:left">Name:</label>
+			<input id="filter-skill-name" style="float:left;width:100px">
+			<label style="float:left">From:</label>
+			<input id="filter-skill-from" style="float:left;width:20px">
+			<label style="float:left">To:</label>
+			<input id="filter-skill-to" style="float:left;width:20px">
+		</div>
+	</div>
+	
+	<button id="receipt-btn" onclick="showReceipts()">Receipts</button>
+	<div id="receipt-dialog" title="Receipts">
+		<table id="receipts-table" style="width:100%">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Location</th>
+					<th>Reputation</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	
+	<div id="popup" class="ol-popup">
+		<div id="popup-content"></div>
+	</div>
+<body>
+<script src="scripts/datas.js"></script>
+<script src="scripts/map.js"></script>
+</html>
