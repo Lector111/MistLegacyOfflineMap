@@ -16,7 +16,7 @@ function initialize(){
 			const [z, x, y] = tileCoord;
 
 			var key = z + '/' + y + '/' + x;
-			var file = '../tiles/' + key + '.jpg';
+			var file = 'tiles/' + key + '.jpg';
 			return file;
 		}
 	});
