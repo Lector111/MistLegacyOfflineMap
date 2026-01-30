@@ -320,8 +320,10 @@ function matchSkill(text, skillName, skillFrom, skillTo) {
 }
 
 function showMark(x, y){
+	
 	if (!markerGroups["mark"]) createMarkerGroup("mark"); 
 	
+	removeMarker("mark", "mark");
 	var marker;
 	
 	marker = new ol.Feature({
@@ -331,8 +333,8 @@ function showMark(x, y){
 		marker.setStyle(new ol.style.Style({
 		  image: new ol.style.Icon({
 			src: "images/markers/circle.png",
-			imgSize: [10, 10],
-			anchor: [0.5, 0.5]
+			scale: 0.2, 
+			anchor: [0.5, 0]
 		  })
 		}));
 
