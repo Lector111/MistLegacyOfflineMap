@@ -261,9 +261,6 @@ function Filter(markers){
 	var isAll = selected.includes('all');
 	var searchString = $("#filter-search").val();
 	var hiden = $("#filter-hiden").val();
-	var skillName = $("#filter-skill-name").val();
-	var skillFrom = $("#filter-skill-from").val();
-	var skillTo = $("#filter-skill-to").val();
 	markers.forEach(marker => {
 		var isExist = true;
 		
@@ -283,8 +280,17 @@ function Filter(markers){
 			isExist = false;
 		}
 		
-		if(skillName!=""){
-			isExist = matchSkill(marker.description, skillName, skillFrom, skillTo)
+		if($("#filter-skill-name-1").val()!=""){
+			isExist = matchSkill(marker.description, $("#filter-skill-name-1").val(), $("#filter-skill-from-1").val(), $("#filter-skill-to-1").val())
+		}
+		if($("#filter-skill-name-2").val()!=""){
+			isExist = matchSkill(marker.description, $("#filter-skill-name-2").val(), $("#filter-skill-from-2").val(), $("#filter-skill-to-2").val())
+		}
+		if($("#filter-skill-name-3").val()!=""){
+			isExist = matchSkill(marker.description, $("#filter-skill-name-3").val(), $("#filter-skill-from-3").val(), $("#filter-skill-to-3").val())
+		}
+		if($("#filter-skill-name-4").val()!=""){
+			isExist = matchSkill(marker.description, $("#filter-skill-name-4").val(), $("#filter-skill-from-4").val(), $("#filter-skill-to-4").val())
 		}
 		
 		if(isExist){
